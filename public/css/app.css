@@ -1,0 +1,287 @@
+/*makes it easier to include in package for reviewer*/
+/*I use the default css syntax on stylus because sublime 
+makes it harder not to use it*/
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: OpenSans-Regular;
+}
+/*these all change the behavior of how the browsers handle the color of input texts*/
+::-webkit-input-placeholder {
+  color: #fff;
+}
+:-moz-placeholder {
+/* Firefox 18- */
+  color: #fff;
+}
+::-moz-placeholder {
+/* Firefox 19+ */
+  color: #fff;
+}
+:-ms-input-placeholder {
+  color: #fff;
+}
+/*mozilla handles the selection great no need add it here and change it*/
+::selection {
+  text-decoration-color: #fff;
+  background: #808080;
+}
+/*linear gradient mixin, only used once y1 is top gradient y2 bottom gradient*/
+html {
+  height: 100%;
+/*prevents gradient from repeating in small increments*/
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: -webkit-linear-gradient(#367cd6, #183968);
+  background: linear-gradient(#367cd6, #183968);
+}
+body {
+  padding-top: 10%;
+}
+.verticalLine,
+#fiveDayContainer li {
+  border-right: 1px solid #bdbdbd;
+  height: 100%;
+}
+.flex,
+#ngView {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flexInline {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.flexH,
+form,
+#currentTempContainer,
+#currentTemp,
+ul,
+ul li {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+}
+#cloud1,
+#cloud2 {
+  color: #4b79b7;
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 10%;
+  font-size: 450px;
+}
+#cloud2 {
+  top: 5%;
+  left: 70%;
+  font-size: 350px;
+}
+#ngView {
+  margin: auto;
+  width: 35%;
+  height: 500px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#app {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 8px;
+  border: 1px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  z-index: 2;
+}
+#topHalfContainer {
+  background: rgba(54,124,214,0.5);
+  border-radius: 8px 8px 0 0;
+  height: 65%;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid rgba(24,57,104,0.5);
+  margin: auto;
+  padding: 0;
+  width: 90%;
+}
+.formButtons,
+form button {
+  width: 10%;
+  background-color: rgba(54,124,214,0);
+  color: #22599a;
+  border: none;
+  font-size: 35px;
+}
+form {
+  border: 1px;
+/*this helps keep the hr devider from hitting the top input*/
+  margin-bottom: 1%;
+  padding: 1.5% 1% 0 1%;
+}
+form input {
+  width: 80%;
+  background-color: rgba(54,124,214,0);
+  border: none;
+  color: #fff;
+  font-size: 40px;
+}
+#currentTempContainer {
+  color: #fff;
+  padding: 0 1% 0.5% 1%;
+}
+#currentTemp {
+  width: 50%;
+  padding: 3% 0 5% 0;
+}
+#currentTemp p {
+  text-align: right;
+  font-size: 152px;
+  height: 100%;
+  width: 87%;
+}
+#currentTemp div {
+  width: 13%;
+  font-size: 100px;
+  padding: 20px 0 0 0;
+}
+#currentTempExtra {
+  text-align: left;
+  width: 50%;
+  margin: auto;
+  padding: 3% 0 5% 0;
+}
+#currentTempExtra p:nth-child(1) {
+  font-weight: thin;
+  font-size: 70px;
+}
+#currentTempExtra p:nth-child(2) {
+  font-size: 18px;
+  font-weight: thin;
+}
+#currentTempExtra p:nth-child(3) {
+  font-size: 16px;
+  font-weight: thin;
+}
+/*display inline as flex boxes*/
+ul {
+  list-style: none;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+.flexDirV,
+ul li {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+/*BUT maintain column style on li*/
+ul li {
+  list-style: none;
+  width: 20%;
+/*how we achieve column style!*/
+  -webkit-flex-flow: column wrap;
+}
+ul li p {
+  text-align: center;
+}
+#fiveDayContainer {
+  background-color: #fff;
+/*makes it go inline with the bottom border radius of the #app*/
+  border-radius: 0 0 8px 8px;
+  border: 1px;
+  padding: 3% 0 3% 0;
+  height: 35%;
+}
+#fiveDayContainer li p:nth-child(1) {
+  color: #9b9b9b;
+  font-size: 20px;
+}
+#fiveDayContainer li p:nth-child(2) img {
+  padding: 0;
+  margin: 0;
+  max-width: 35px;
+  max-height: 35px;
+}
+#fiveDayContainer li p:nth-child(3) {
+  font-size: 28px;
+  font-weight: bold;
+  color: #3b4b58;
+}
+#fiveDayContainer li p:nth-child(4) {
+  font-size: 20px;
+  color: #4a4b58;
+}
+/*remove verticle line hack*/
+#fiveDayContainer li:nth-child(5) {
+  border-right: 0px solid #bdbdbd;
+  height: 100%;
+}
+@media only screen and (max-width: 1920px) {
+  #ngView {
+    width: 33%;
+  }
+  #currentTempExtra {
+    padding-left: 3%;
+  }
+  #cloud1 {
+    font-size: 380px;
+  }
+  #cloud2 {
+    font-size: 240px;
+  }
+}
+@media only screen and (max-width: 1450px) {
+  #currentTempExtra {
+    padding-left: 3%;
+  }
+  #cloud1 {
+    font-size: 350px;
+  }
+  #cloud2 {
+    font-size: 200px;
+  }
+}
+@media only screen and (max-width: 1155px) {
+  #ngView {
+    width: 50%;
+  }
+  #currentTempExtra {
+    padding-left: 2%;
+  }
+}
+@media only screen and (max-width: 950px) {
+  #ngView {
+    width: 65%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #ngView {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #ngView {
+    width: 75%;
+  }
+}
