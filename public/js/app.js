@@ -156,7 +156,7 @@ app.service("weatherSvc", ["$http", function($http) {
 
 	//api key is in the get request here for dev reasons
 	this.getCurrentWeather = function(city) {
-		return $http.get("http://api.openweathermap.org/data/2.5/weather?q="+ city + key)
+		return $http.get("https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q="+ city + key)
 		.then(function(response) {
 			return response
 		})
@@ -167,7 +167,7 @@ app.service("weatherSvc", ["$http", function($http) {
 
 	this.getFiveDayForecast = function(city) {
 		//to get the the five day forecast we change weather from the above request to forcast
-		return $http.get("http://api.openweathermap.org/data/2.5/forecast?q="+ city + key)
+		return $http.get("https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q="+ city + key)
 		.then(function(response) {
 			return response
 		})
